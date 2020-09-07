@@ -35,11 +35,11 @@ void display(const char *label, double used,
              int const warning, int const critical, int const decimals)
 {
   if (critical != 0 && used > critical) {
-    printf("%s<span color='%s'>", label, RED);
+    printf("%s<span font_features='tnum' color='%s'>", label, RED);
   } else if (warning != 0 && used > warning) {
-    printf("%s<span color='%s'>", label, ORANGE);
+    printf("%s<span font_features='tnum' color='%s'>", label, ORANGE);
   } else {
-    printf("%s<span>", label);
+    printf("%s<span font_features='tnum'>", label);
   }
 
   printf("%*.*lf%%</span>\n", decimals + 3 + 1, decimals, used);
